@@ -37,4 +37,9 @@ class Usuario{
     function getpassword(){
         return $this->password = $password;
     }
+
+ //metodo de consulta de la Base de Datos
+        public function conseguirTodos(){
+            echo "imprimiendo todos los usurios";    
+        }
 }
