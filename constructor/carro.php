@@ -1,30 +1,37 @@
 <?php
 
-//Programacion orienta a objetos (POO)
-//Clases: Un molde para crear mas objetos del mismo tipo
+    // Programacion orientada a objetos POO
+    // clases: un molde para crearr mas objetos del mismo tipo
 
-class Carro{
-    //Atributos o propiedades (Variables)
-    public $color;
-    public $marca;
-    public $modelo;
-    public $caballaje;
-    public $velocidad;
-    public $puestos;
+    class Carro{
+        //atributos o propieddes (variable)
+        public $color;
+        public $marca;
+        public $modelo;
+        public $velocidad;
+        public $caballaje;
+        public $puestos;
+    
 
-    // Como puedo crear un costructor?
-    public function ___construct($color,$marca,$modelo,$caballaje,$velocidad,$puestos)
-{
-    $this-> color = $color;
-    $this-> marca = $marca;
-    $this-> modelo = $modelo;
-    $this-> caballaje = $caballaje;
-    $this-> velocidad = $velocidad;
-    $this-> puestos = $puestos; 
+    // public function __construct()
+    // {
+    //     $this->color = "Rojo";
+    //     $this->marca = "Ferrari";
+    //     $this->modelo = "Aventador";
+    //     $this->velocidad = 500;
+    //     $this->caballaje= 300;
+    //     $this->puestos =2;
+    // }
+    public function __construct($color,$marca, $modelo, $velocidad, $caballaje, $puestos)
+    {
+        $this->color = $color;
+        $this->marca = $marca;
+        $this->modelo = $modelo;
+        $this->velocidad = $velocidad;
+        $this->caballaje= $caballaje;
+        $this->puestos = $puestos;
+    }
+
+
+    
 }
-}
-
-
-
-
-

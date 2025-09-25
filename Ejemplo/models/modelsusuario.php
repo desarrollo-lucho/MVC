@@ -1,45 +1,78 @@
 <?php
+require_once "Config/database.php";
 
 class Usuario{
-    public $nombres;
-    public $apellidos;
+    public $id_usuario;
+    public $nombre;
+    public $apellido;
     public $email;
     public $password;
 
+    private $db;
+
+    public function __construct()
+    {
+        $this->db=database::conectar();
+    }
+
+    function getid_usuario(){
+        return $this->id_usuario;
+    }
+
     function getNombre(){
-        return $this->nombres;
+        return $this->nombre;
     }
 
-    function getapellidos(){
-        return $this->apellidos;
+        function getApellido(){
+        return $this->apellido;
     }
 
-    function getemail(){
+    function getEmail(){
         return $this->email;
     }
 
-    function getpassword(){
+    function getPassword(){
         return $this->password;
     }
 
-    function getNombres(){
-        return $this->nombre = $nombres;
+    function setid_usuarios($id_usuario){
+        $this->id_usuarios = $id_usuario;
     }
 
-    function getapellidos(){
-        return $this->apellidos = $apellidos;
+    function setNombre($nombre){
+        $this->nombre = $nombre;
     }
 
-    function getemail(){
-        return $this->email = $email;
+    function setApellido($apellido){
+        $this->apellido = $apellido;
     }
 
-    function getpassword(){
-        return $this->password = $password;
+    function setEmail($email){
+        $this->email = $email;
     }
 
- //metodo de consulta de la Base de Datos
-        public function conseguirTodos(){
-            echo "imprimiendo todos los usurios";    
-        }
+    function setPassword($password){
+        $this->password = $password;
+    }
+
+// metodo que consulte la bd
+
+public function conseguirTodos(){
+
+    //var_dump($this->db);
+
+   $query = $this->db->query("SELECT * FROM t_usuarios");
+   return $query;
+
+    echo "IMPRIMIENDO TODOS LOS USUARIOS ACTIVOS...";
+}
+
+public  function crear(){
+    $sql = "INSERT INTO t_usuarios (id_usuarios,nombre,apellido,email,password) VALUES({$this->id_usuario}, '{$this->nombre}', '{$this->apellido}', '{$this->email}', '{$this->password}');";
+
+    $guardar = $this->db->query($sql);
+
+    return $guardar;
+}
+
 }

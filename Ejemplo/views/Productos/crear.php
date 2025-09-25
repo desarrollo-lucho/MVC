@@ -6,12 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Crear Usuario</h1>
+    <h1>Crear Producto</h1>
     <form action="">
 
-    <label for="">Nombre</label>
+    <label for="">Producto</label>
     <input type="text">
-    <label for="">Apellidos</label>
+    <label for="">Descripcion</label>
     <input type="text">
     </form>
 </body>

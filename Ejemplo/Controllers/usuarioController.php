@@ -1,16 +1,28 @@
 <?php
 
-//mostramos las acciones que puede realizar el controlador
-    class UsuarioController{
-        public function mostrarTodos(){
-            require_once 'models/modelsUsuario.php';
-            $usuario=new Usuario();
+class   UsuarioController{
 
-            $todos_los_usuarios=$usuario->conseguirTodos();
-            require_once 'views/Usuarios/mostrar-todos.php';
-        }
+    public  function mostrarTodos(){
+        require_once "models/modelsUsuario.php";
 
-        public function crear(){
-            require_once 'views/Usuarios/crear.php';
-        }
+        $usuario = new Usuario();
+
+        $todos_los_usuarios = $usuario->conseguirTodos();
+
     }
+
+    public  function crear(){
+        require_once "models/modelsUsuario.php";
+
+        $practicanteDeBodega = new Usuario();
+
+
+        $practicanteDeBodega->setid_usuarios("null");
+        $practicanteDeBodega->setNombre("Juan Sebastian");
+        $practicanteDeBodega->setApellido("Nieto");
+        $practicanteDeBodega->setEmail("jnieto@gmail.com");
+        $practicanteDeBodega->setpassword("abc2123");
+
+        $guardar = $practicanteDeBodega->crear();
+    }
+}
